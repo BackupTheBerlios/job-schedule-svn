@@ -4,6 +4,7 @@
 
 global $rm;
 if( ! $rm ) die( "wrong runmode");
+$from_email = 'own@email';
 $dbHost = "localhost";
 $dbUser = "dbuser";
 $dbPass = "dbpass";

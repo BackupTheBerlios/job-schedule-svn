@@ -1,4 +1,5 @@
 <?PHP
+global $from_email;
 if( ! preg_match( "/^[a-z\-]{6}$/", $cs ) ) {
   die( "wrong callsign [$cs]" );
 }
@@ -16,11 +17,11 @@ A new password is created for for callsign '$cs' at
 $url
 The password is now '$pass'.
 
-Best Regards, Maletin.
+Best Regards.
 ";
-    ini_set("sendmail_from", "fh@localhost" );
-    $params = sprintf("-oi -f %s", "fh@localhost" );
-    mail($mail, "FH-Scenario-Password", $message, "From: fh@localhost\r\n", "-oi -f fh@localhost\r\n" );
+    ini_set("sendmail_from", $from_email );
+    $params = sprintf("-oi -f %s", $from_email );
+    mail($mail, "FH-Scenario-Password", $message, "From: $from_email\r\n", "-oi -f $from_email\r\n" );
     print "Your new password is mailed to $mail";
   }
 } else {

@@ -51,11 +51,12 @@ if( $rm == 'regval' ) {
   include( "score.php" );
 } elseif( $rm == 'alias' ) {
   include( "alias.php" );
+} elseif( $rm == 'chcallsign' ) {
+  include( "chcallsign.php" );
 } else {
   include( "job.php" );
 }
 ob_end_flush();
-// include( "menu.php" );
 ?>
 </body>
 </html>
